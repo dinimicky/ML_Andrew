@@ -20,8 +20,13 @@ idx = zeros(size(X,1), 1);
 %
 % Note: You can use a for-loop over the examples to compute this.
 %
-
-
+for i=1:size(X,1)
+    t = ones(K,1)*X(i,:);
+    delta = centroids - t;
+    dis = sum(delta.*delta,2);
+    [mindis, minIdx] = min(dis);
+    idx(i,1) = minIdx;
+end
 
 
 
