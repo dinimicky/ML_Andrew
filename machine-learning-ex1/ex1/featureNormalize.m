@@ -29,13 +29,7 @@ m = size(X, 1);
 n = size(X, 2);
 mu = mean(X);
 sigma = std(X);
-X_norm = X - ones(m, 1) * mu;
-
-
-for i = 1:n
-    X_norm(:,i)=X_norm(:,i)/sigma(i);
-    
-end
+X_norm = (X - ones(m, 1) * mu)./sigma;
 
 
 
